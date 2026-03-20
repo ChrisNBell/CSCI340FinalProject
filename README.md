@@ -1,8 +1,7 @@
 # CSCI340FinalProject
 Hendrix Alumni Project
 
-<<<<<<< Updated upstream
-=======
+
 
 
 1. Team member name   -  Email   -   Phone
@@ -10,3 +9,4 @@ Hendrix Alumni Project
   2.
   3.
   4.
+
