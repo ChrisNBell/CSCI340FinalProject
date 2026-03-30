@@ -34,7 +34,7 @@ Hendrix Alumni Project
   3. If a group member's work isn't satesfactory, we will try our best to aid that group member or refer them to Dr. Goadrich.
   4. If any group member doesn't hold their weight, we will try out best to come to an agreement within the group.
   ***********
-  5. If any member is deemed by the majority of the group as a hinderence, and no other action the group can think of would help, we will bring it up to Dr. Goadrich and request you be removed from the project.
+  5. If any member is deemed by the majority of the group as a hinderence, and no other action the group can think of would help, we will bring it up to Dr. Goadrich and request you be removed from the project..
 
 
 7. Acceptance of the contract
