@@ -50,6 +50,6 @@ Hendrix Alumni Project
 7. Acceptance of the contract
   ** Please type your name below if you agree to the contract.
   1. Drew Williams
-  2. 
+  2. James Randle Jr
   3. 
   4. 
