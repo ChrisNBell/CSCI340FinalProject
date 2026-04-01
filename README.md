@@ -46,4 +46,4 @@ Hendrix Alumni Project
   1. Drew Williams
   2. James Randle Jr
   3. Chris Bell 
-  4. 
+  4. Jake Nurkin
