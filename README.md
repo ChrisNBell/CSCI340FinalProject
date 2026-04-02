@@ -40,8 +40,16 @@ Hendrix Alumni Project
   ***********
   5. If any member is deemed by the majority of the group as a hinderence, and no other action the group can think of would help, we will bring it up to Dr. Goadrich and request you be removed from the project..
 
+7. Member Paragraph
+  1. 
+  2. 
+  3. 
+  4. 
 
-7. Acceptance of the contract
+
+
+
+8. Acceptance of the contract
   ** Please type your name below if you agree to the contract.
   1. Drew Williams
   2. James Randle Jr
