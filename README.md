@@ -43,7 +43,7 @@ Hendrix Alumni Project
 
 7. Member Paragraph
   1. Drew Williams: During this project, I am acting as the Primary for the front end HTML/CSS code and the Secondary for the front end Java-Script. I plan to contribute a positive attitude to this project. I understand that life happens so I would like to be lenient during group conflict. If the conflict is harming the group, then we can talk about it and try to resolve it within our group. If that seems to difficult, then we will have to come up with the correct consequence. 
-  2. 
+  2. Chris Bell: My responsibilities include developing the front-end code through AJAX while also assisting with the website’s general design. However, I will also contribute to the backend database when necessary. As a member of this team, I plan to contribute to a positive team experience by communicating my ideas during meetings and giving constructive criticism when necessary. I plan to attend each meeting on time while also giving my best effort during each meeting. When resolving conflicts, I will communicate and take criticism well. 
   3. 
   4. 
 
