@@ -41,9 +41,18 @@ Hendrix Alumni Project
   5. If any member is deemed by the majority of the group as a hinderence, and no other action the group can think of would help, we will bring it up to Dr. Goadrich and request you be removed from the project..
 
 
-7. Acceptance of the contract
+7. Member Paragraph
+  1. Drew Williams: During this project, I am acting as the Primary for the front end HTML/CSS code and the Secondary for the front end Java-Script. I plan to contribute a positive attitude to this project. I understand that life happens so I would like to be lenient during group conflict. If the conflict is harming the group, then we can talk about it and try to resolve it within our group. If that seems to difficult, then we will have to come up with the correct consequence. 
+  2. 
+  3. 
+  4. 
+
+
+
+
+8. Acceptance of the contract
   ** Please type your name below if you agree to the contract.
   1. Drew Williams
   2. James Randle Jr
   3. Chris Bell 
-  4. 
+  4. Jake Nurkin
