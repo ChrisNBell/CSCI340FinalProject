@@ -8,19 +8,19 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\chris\\.nuget\\packages\\": {}
+    "C:\\Users\\Thatg\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\Database and Web\\CSCI340FinalProject\\HendrixAdvancement\\HendrixAdvancement.csproj",
+      "projectUniqueName": "C:\\Users\\Thatg\\OneDrive\\Desktop\\CSCI340FinalProject\\HendrixAdvancement\\HendrixAdvancement.csproj",
       "projectName": "HendrixAdvancement",
-      "projectPath": "C:\\Users\\chris\\Database and Web\\CSCI340FinalProject\\HendrixAdvancement\\HendrixAdvancement.csproj",
-      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\Database and Web\\CSCI340FinalProject\\HendrixAdvancement\\obj\\",
+      "projectPath": "C:\\Users\\Thatg\\OneDrive\\Desktop\\CSCI340FinalProject\\HendrixAdvancement\\HendrixAdvancement.csproj",
+      "packagesPath": "C:\\Users\\Thatg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Thatg\\OneDrive\\Desktop\\CSCI340FinalProject\\HendrixAdvancement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Thatg\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
