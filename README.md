@@ -10,7 +10,7 @@ Hendrix Alumni Project
   1. We have decided on our roles with a Primary/Secondary role for each of the possible roles.
   2. Within each role, the decision process is to be made by unanimous decision between the Primary and    Secondary of the role. With group decisions it is majority rule with hopes of achieving a unanimous decision.
   3. While all of us are responsible for our own communication and work deadlines, the Primary is responsible for keeping up with deadlines for each role.
-  4. // Day and Time of our weekly meetings
+  4. Usually Wednesday or Friday at 2:00pm
   5. Try our best to have open communication using our teams chat and by phone with smaller deadlines.
 
 
