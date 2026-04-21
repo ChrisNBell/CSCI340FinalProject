@@ -8,12 +8,13 @@
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/HendrixAdvancement.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/HendrixAdvancement.styles.css" asp-append-version="true" />
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3"
+             style="background-color: #CB4F0C;">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Hendrix Advancement</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
@@ -23,16 +24,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Home/Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-page="/Donate">Donate</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Donate/Index">Donate</a>
+                            <a class="nav-link" asp-area="" asp-page="/Admin">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Index">Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/About">Contact Us</a>
+                            <a class="nav-link" asp-area="" asp-page="/About">Contact Us</a>
                         </li>
                     </ul>
                 </div>

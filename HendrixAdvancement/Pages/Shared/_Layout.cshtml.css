@@ -5,10 +5,11 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-family: 'Merriweather Sans', Arial, sans-serif;
 }
 
 a {
-  color: #0077cc;
+  color: #fff;
 }
 
 .btn-primary {
@@ -19,6 +20,7 @@ a {
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
+  font-family: 'Merriweather Sans', Arial, sans-serif;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -40,9 +42,12 @@ button.accept-policy {
 }
 
 .footer {
+  background-color: #CB4F0C;
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+  font-family: 'Merriweather Sans', Arial, sans-serif;
+  /* font-family: "Merriweather",'Times New Roman', Times, serif; */
 }
