@@ -12,6 +12,11 @@ public enum Status
     Open, PartiallyFunded, Funded
 }
 
+public enum YesOrNo
+{
+    Yes, No
+}
+
 public class Project
 {
     public int Id { get; set; }
@@ -25,5 +30,5 @@ public class Project
     public Priority Priority { get; set; }
     public Status Status { get; set; }
     public decimal Cost { get; set; }
-    public bool Nameable { get; set; }
+    public YesOrNo Nameable { get; set; }
 }
