@@ -65,6 +65,11 @@
                 <span asp-validation-for="Project.Nameable" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Project.Approval" class="control-label"></label>
+                <input asp-for="Project.Approval" class="form-control" />
+                <span asp-validation-for="Project.Approval" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
