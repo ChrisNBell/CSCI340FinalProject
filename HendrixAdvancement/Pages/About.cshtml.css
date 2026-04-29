@@ -1,0 +1,41 @@
+h1{
+    padding-top: 1.2%;
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0.229em;
+    color: #111
+}
+
+h2{
+  padding-top: 0.5%;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 0.229em;
+  color: #CB4F0C;
+  opacity: 80%;
+  text-align: center;
+}
+
+h4{
+    padding-top: 0.5%;
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0.229em;
+}
+
+
+p{
+    font-family: "Merriweather Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.46;
+    color: rgb(68.85, 68.85, 68.85);
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+img{
+  display: flex;
+}
