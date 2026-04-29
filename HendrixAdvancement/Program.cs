@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using HendrixAdvancement.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<HendrixAdvancementContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("HendrixAdvancementContext") ?? throw new InvalidOperationException("Connection string 'HendrixAdvancementContext' not found.")));
 
 var app = builder.Build();
 
