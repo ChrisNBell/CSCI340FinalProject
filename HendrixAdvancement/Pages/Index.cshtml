@@ -55,41 +55,83 @@
                 </div>
             </section>
 
-
-            <div style="overflow-x:auto;">
-                <table>
+            <table class="table">
+                <thead>
                     <tr>
-                        <th>Project Name</th>
-                        <th>Location</th>
-                        <th>Short Description</th>
-                        <th>Funding Amount</th>
-                        <th>Link to Project Page</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Title)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Location)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Department)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Category)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Timeframe)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Priority)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Cost)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Project[0].Nameable)
+                        </th>
+                        <th></th>
                     </tr>
-                    <tr>
-                        <td>Galloway Renovation </td>
-                        <td>Galloway</td>
-                        <td>Here is a short description of this project.</td>
-                        <td>$5,000,000</td>
-                        <td><button onclick="window.location.href='/Project'">Click Me</button></td>
-                    </tr>
-                    <tr>
-                        <td>Galloway Renovation </td>
-                        <td>Galloway</td>
-                        <td>Here is a short description of this project.</td>
-                        <td>$5,000,000</td>
-                        <td><button onclick="window.location.href='/Project'">Click Me</button></td>
-                    </tr>
-                    <tr>
-                        <td>Galloway Renovation </td>
-                        <td>Galloway</td>
-                        <td>Here is a short description of this project.</td>
-                        <td>$5,000,000</td>
-                        <td><button onclick="window.location.href='/Project'">Click Me</button></td>
-                    </tr>
-
-                    
-                </table>
-            </div>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Project)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Department)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Timeframe)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Priority)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cost)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nameable)
+                            </td>
+                            <td>
+                                <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </body>
 
     </html>

@@ -1,18 +1,18 @@
 @page
 @model HendrixAdvancement.Pages_Projects.CreateModel
 
-        @{
-        ViewData["Title"] = "Create";
-        }
+@{
+    ViewData["Title"] = "Create";
+}
         
-        <h1>Create</h1>
+<h1>Create</h1>
         
-    <h4>Project</h4>
-    <hr />
-    <div class="row">
+<h4>Project</h4>
+<hr />
+<div class="row">
     <div class="col-md-4">
-    <form method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Project.Title" class="control-label"></label>
                 <input asp-for="Project.Title" class="form-control" />
@@ -64,11 +64,6 @@
                 <span asp-validation-for="Project.Nameable" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Project.Approval" class="control-label"></label>
-                <input asp-for="Project.Approval" class="form-control" />
-                <span asp-validation-for="Project.Approval" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -80,5 +75,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

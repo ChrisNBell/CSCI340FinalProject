@@ -31,5 +31,4 @@ public class Project
     public Status Status { get; set; }
     public decimal Cost { get; set; }
     public YesOrNo Nameable { get; set; }
-    public YesOrNo Approval { get; set; }
 }
