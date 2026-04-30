@@ -3,6 +3,92 @@
 @{
     ViewData["Title"] = "Admin Page";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Admin Page.</p>
+<head>
+    <img id="HDX" src="~/images/hendrixLogo_bob.svg" alt="Hendrix Logo" width="300px">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Iceberg&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Macondo&display=swap"
+        rel="stylesheet" />
+        <h1>Project Database Management</h1>
+        <hr class="hr" />
+    </head>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Location)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Department)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Timeframe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Priority)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Cost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Project[0].Nameable)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Project)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Timeframe)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nameable)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

@@ -2,12 +2,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  border: 1px solid #ddd;
+  border: 1px solid #CB4F0C;
 }
 
 th, td {
   text-align: left;
   padding: 8px;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  color: rgb(68.85, 68.85, 68.85);
 }
 
 h1{
