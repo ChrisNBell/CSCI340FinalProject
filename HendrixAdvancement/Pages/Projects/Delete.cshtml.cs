@@ -29,7 +29,7 @@ namespace HendrixAdvancement.Pages_Projects
                 return NotFound();
             }
 
-            var project = await _context.Project.FirstOrDefaultAsync(m => m.Id == id);
+            var project = await _context.Projects.FirstOrDefaultAsync(m => m.ProjectId == id);
 
             if (project is not null)
             {
@@ -48,11 +48,11 @@ namespace HendrixAdvancement.Pages_Projects
                 return NotFound();
             }
 
-            var project = await _context.Project.FindAsync(id);
+            var project = await _context.Projects.FindAsync(id);
             if (project != null)
             {
                 Project = project;
-                _context.Project.Remove(Project);
+                _context.Projects.Remove(Project);
                 await _context.SaveChangesAsync();
             }
 

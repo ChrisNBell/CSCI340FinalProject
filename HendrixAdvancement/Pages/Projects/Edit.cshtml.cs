@@ -30,7 +30,7 @@ namespace HendrixAdvancement.Pages_Projects
                 return NotFound();
             }
 
-            var project =  await _context.Project.FirstOrDefaultAsync(m => m.Id == id);
+            var project =  await _context.Projects.FirstOrDefaultAsync(m => m.ProjectId == id);
             if (project == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace HendrixAdvancement.Pages_Projects
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProjectExists(Project.Id))
+                if (!ProjectExists(Project.ProjectId))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace HendrixAdvancement.Pages_Projects
 
         private bool ProjectExists(int id)
         {
-            return _context.Project.Any(e => e.Id == id);
+            return _context.Projects.Any(e => e.ProjectId == id);
         }
     }
 }

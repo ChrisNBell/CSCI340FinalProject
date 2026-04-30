@@ -13,7 +13,13 @@ namespace HendrixAdvancement.Data
             : base(options)
         {
         }
-
-        public DbSet<HendrixAdvancement.Models.Project> Project { get; set; } = default!;
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Opportunity> Opportunities { get; set; }
+        
+        protected override void OnModelCreating (ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Opportunity>().ToTable("Opportunity");
+            modelBuilder.Entity<Project>().ToTable("Project");
+        }
     }
 }
