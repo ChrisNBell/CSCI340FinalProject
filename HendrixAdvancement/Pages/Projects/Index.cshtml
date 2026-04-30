@@ -32,16 +32,10 @@
                 @Html.DisplayNameFor(model => model.Project[0].Timeframe)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Project[0].Priority)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project[0].Status)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Project[0].Cost)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Project[0].Nameable)
+                @Html.DisplayNameFor(model => model.Project[0].Approval)
             </th>
             <th></th>
         </tr>
@@ -69,21 +63,15 @@
                     @Html.DisplayFor(modelItem => item.Timeframe)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Priority)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Cost)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nameable)
+                    @Html.DisplayFor(modelItem => item.Approval)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ProjectId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ProjectId">Delete</a>
                 </td>
             </tr>
         }

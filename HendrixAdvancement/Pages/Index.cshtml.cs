@@ -23,7 +23,7 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        Project = await _context.Project.ToListAsync();
+        Project = await _context.Projects.ToListAsync();
     }
 }
 

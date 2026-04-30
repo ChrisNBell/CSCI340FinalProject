@@ -28,7 +28,7 @@ namespace HendrixAdvancement.Pages_Projects
                 return NotFound();
             }
 
-            var project = await _context.Project.FirstOrDefaultAsync(m => m.Id == id);
+            var project = await _context.Projects.FirstOrDefaultAsync(m => m.ProjectId == id);
 
             if (project is not null)
             {
