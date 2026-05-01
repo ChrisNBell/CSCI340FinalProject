@@ -1,0 +1,60 @@
+@page
+@model HendrixAdvancement.Pages.Opportunities.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Opportunity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Opportunity.OpportunityId" />
+            <div class="form-group">
+                <label asp-for="Opportunity.ProjectID" class="control-label"></label>
+                <select asp-for="Opportunity.ProjectID" class="form-control" asp-items="ViewBag.ProjectID" ></select>
+                <span asp-validation-for="Opportunity.ProjectID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opportunity.Title" class="control-label"></label>
+                <input asp-for="Opportunity.Title" class="form-control" />
+                <span asp-validation-for="Opportunity.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opportunity.Priority" class="control-label"></label>
+                <select asp-for="Opportunity.Priority" class="form-control" ></select>
+                <span asp-validation-for="Opportunity.Priority" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opportunity.Status" class="control-label"></label>
+                <select asp-for="Opportunity.Status" class="form-control" ></select>
+                <span asp-validation-for="Opportunity.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opportunity.Cost" class="control-label"></label>
+                <input asp-for="Opportunity.Cost" class="form-control" />
+                <span asp-validation-for="Opportunity.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opportunity.Nameable" class="control-label"></label>
+                <select asp-for="Opportunity.Nameable" class="form-control" ></select>
+                <span asp-validation-for="Opportunity.Nameable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

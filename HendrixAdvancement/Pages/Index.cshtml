@@ -79,9 +79,6 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Project[0].Cost)
                         </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Approval)
-                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -108,9 +105,6 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Cost)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Approval)
                             </td>
                             <td>
                                 <a asp-page="./Details" asp-route-id="@item.ProjectId">Details</a>

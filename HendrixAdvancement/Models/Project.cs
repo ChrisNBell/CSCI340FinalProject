@@ -22,7 +22,7 @@ namespace HendrixAdvancement.Models{
         [DataType(DataType.Currency)]
         public decimal Cost { get; set; }
         public YesOrNo Approval { get; set; }
-        public ICollection<Opportunity> Opportunities { get; set; }
+        public ICollection<Opportunity>? Opportunities { get; set; }
     }
 }
 
