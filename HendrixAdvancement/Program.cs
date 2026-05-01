@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<HendrixAdvancementContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("HendrixAdvancementContext") ?? throw new InvalidOperationException("Connection string 'HendrixAdvancementContext' not found.")));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -28,7 +28,10 @@ namespace HendrixAdvancement.Pages_Projects
                 return NotFound();
             }
 
-            var project = await _context.Projects.FirstOrDefaultAsync(m => m.ProjectId == id);
+            var project = await _context.Projects
+                .Include(s => s.Opportunities)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ProjectId == id);
 
             if (project is not null)
             {
