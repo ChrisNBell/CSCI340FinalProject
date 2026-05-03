@@ -8,16 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using HendrixAdvancement.Data;
 using HendrixAdvancement.Models;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using ContosoUniversity;
+
 namespace HendrixAdvancement.Pages;
 
 public class IndexModel : PageModel
 {
 
-    private readonly HendrixAdvancement.Data.HendrixAdvancementContext _context;
+    private readonly HendrixAdvancementContext _context;
+    private readonly IConfiguration Configuration;
 
-    public IndexModel(HendrixAdvancement.Data.HendrixAdvancementContext context)
+    public IndexModel(HendrixAdvancementContext context, IConfiguration configuration)
     {
         _context = context;
+        Configuration = configuration;
     }
 
     public string TitleSort { get; set; }
@@ -27,16 +32,25 @@ public class IndexModel : PageModel
     public string CostSort { get; set; }
     public string CurrentFilter { get; set; }
     public string CurrentSort { get; set; }
+    public PaginatedList<Project> Projects { get; set; }
 
-    public IList<Project> Project { get; set; } = default!;
-
-    public async Task OnGetAsync(string sortOrder, string searchString)
+    public async Task OnGetAsync(string sortOrder, string searchString,
+        string currentFilter, int? pageIndex)
     {
+        CurrentSort = sortOrder;
         TitleSort = String.IsNullOrEmpty(sortOrder) ? "title_desc": "";
         LocationSort = sortOrder == "Location" ? "location_desc" : "Location";
         DepartmentSort = sortOrder == "Department" ? "department_desc" : "Department";
         CategorySort = sortOrder == "Category" ? "category_desc" : "Category"; 
         CostSort = sortOrder == "Cost" ? "Cost_desc" : "Cost";
+        if (searchString != null)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
         CurrentFilter = searchString;
 
@@ -82,7 +96,9 @@ public class IndexModel : PageModel
                 break;
         }
 
-        Project = await projectsIQ.AsNoTracking().ToListAsync();
+        var pageSize = Configuration.GetValue("PageSize", 11);
+            Projects = await PaginatedList<Project>.CreateAsync(
+                projectsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
     }
 }
 

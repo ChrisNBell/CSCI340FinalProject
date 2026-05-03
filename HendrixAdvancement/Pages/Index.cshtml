@@ -70,40 +70,45 @@
                 <thead>
                     <tr>
                         <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort">
-                                @Html.DisplayNameFor(model => model.Project[0].Title)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort"
+                            asp-route-currentFilter="@Model.CurrentFilter">
+                                @Html.DisplayNameFor(model => model.Projects[0].Title)
                             </a>
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Description)
+                            @Html.DisplayNameFor(model => model.Projects[0].Description)
                         </th>
                         <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort">
-                                @Html.DisplayNameFor(model => model.Project[0].Location)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort"
+                            asp-route-currentFilter="@Model.CurrentFilter">
+                                @Html.DisplayNameFor(model => model.Projects[0].Location)
                             </a>
                         </th>
                         <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort">
-                                @Html.DisplayNameFor(model => model.Project[0].Department)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort"
+                            asp-route-currentFilter="@Model.CurrentFilter">
+                                @Html.DisplayNameFor(model => model.Projects[0].Department)
                             </a>
                         </th>
                         <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort">
-                                @Html.DisplayNameFor(model => model.Project[0].Category)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort"
+                            asp-route-currentFilter="@Model.CurrentFilter">
+                                @Html.DisplayNameFor(model => model.Projects[0].Category)
                             </a>
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Timeframe)
+                            @Html.DisplayNameFor(model => model.Projects[0].Timeframe)
                         </th>
                         <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort">
-                                @Html.DisplayNameFor(model => model.Project[0].Cost)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
+                            asp-route-currentFilter="@Model.CurrentFilter">
+                                @Html.DisplayNameFor(model => model.Projects[0].Cost)
                             </a>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.Project)
+                    @foreach (var item in Model.Projects)
                     {
                         <tr>
                             <td>
@@ -134,6 +139,25 @@
                     }
                 </tbody>
             </table>
+            @{
+                var prevDisabled = !Model.Projects.HasPreviousPage ? "disabled" : "";
+                var nextDisabled = !Model.Projects.HasNextPage ? "disabled" : "";
+            }
+
+            <a asp-page="./Index"
+            asp-route-sortOrder="@Model.CurrentSort"
+            asp-route-pageIndex="@(Model.Projects.PageIndex - 1)"
+            asp-route-currentFilter="@Model.CurrentFilter"
+            class="btn btn-primary @prevDisabled">
+                Previous
+            </a>
+            <a asp-page="./Index"
+            asp-route-sortOrder="@Model.CurrentSort"
+            asp-route-pageIndex="@(Model.Projects.PageIndex + 1)"
+            asp-route-currentFilter="@Model.CurrentFilter"
+            class="btn btn-primary @nextDisabled">
+                Next
+            </a>
         </body>
 
     </html>
