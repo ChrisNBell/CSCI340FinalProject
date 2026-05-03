@@ -10,7 +10,7 @@ namespace HendrixAdvancement.Data
     public class HendrixAdvancementContext(DbContextOptions<HendrixAdvancementContext> options) : DbContext(options)
     {
         public DbSet<Project> Projects { get; set; } = default!;
-        public DbSet<Opportunity> Opportunities { get; set; }
+        public required DbSet<Opportunity> Opportunities { get; set; }
         
         protected override void OnModelCreating (ModelBuilder modelBuilder)
         {

@@ -2,6 +2,7 @@
 using HendrixAdvancement.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HendrixAdvancement.Migrations
 {
     [DbContext(typeof(HendrixAdvancementContext))]
-    partial class HendrixAdvancementContextModelSnapshot : ModelSnapshot
+    [Migration("20260503210235_SoFar")]
+    partial class SoFar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.7");
@@ -23,9 +26,6 @@ namespace HendrixAdvancement.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Cost")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Nameable")
@@ -41,7 +41,6 @@ namespace HendrixAdvancement.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("OpportunityId");
@@ -61,29 +60,24 @@ namespace HendrixAdvancement.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Category")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Department")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Location")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Timeframe")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ProjectId");

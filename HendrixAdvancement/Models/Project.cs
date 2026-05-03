@@ -13,12 +13,18 @@ namespace HendrixAdvancement.Models{
     public class Project
     {
         public int ProjectId { get; set; }
-        public string? Title { get; set; }
+        [Required]
+        public required string Title { get; set; }
         public string? Description { get; set; }
-        public string? Location { get; set; }
-        public string? Department { get; set; }
-        public string? Category { get; set; }
-        public string? Timeframe { get; set; }
+        [Required]
+        public required string Location { get; set; }
+        [Required]
+        public required string Department { get; set; }
+        [Required]
+        public required string Category { get; set; }
+        [Required]
+        public required string Timeframe { get; set; }
+        [Required]
         [DataType(DataType.Currency)]
         public decimal Cost { get; set; }
         public YesOrNo Approval { get; set; }
