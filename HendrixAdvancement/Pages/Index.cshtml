@@ -55,29 +55,50 @@
                 </div>
             </section>
 
+            <form asp-page="./Index" method="get">
+                <div class="form-actions no-color">
+                    <p>
+                        Search Projects:
+                        <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+                        <input type="submit" value="Search" class="btn btn-primary" /> |
+                        <a asp-page="./Index">Back to full List</a>
+                    </p>
+                </div>
+            </form>
+
             <table class="table">
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Title)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort">
+                                @Html.DisplayNameFor(model => model.Project[0].Title)
+                            </a>
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Project[0].Description)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Location)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort">
+                                @Html.DisplayNameFor(model => model.Project[0].Location)
+                            </a>
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Department)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort">
+                                @Html.DisplayNameFor(model => model.Project[0].Department)
+                            </a>
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Category)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort">
+                                @Html.DisplayNameFor(model => model.Project[0].Category)
+                            </a>
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Project[0].Timeframe)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Cost)
+                            <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort">
+                                @Html.DisplayNameFor(model => model.Project[0].Cost)
+                            </a>
                         </th>
                     </tr>
                 </thead>
