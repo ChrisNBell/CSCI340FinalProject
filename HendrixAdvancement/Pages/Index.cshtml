@@ -71,7 +71,7 @@
                     <tr>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort"
-                            asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter">
                                 @Html.DisplayNameFor(model => model.Projects[0].Title)
                             </a>
                         </th>
@@ -80,19 +80,19 @@
                         </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort"
-                            asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter">
                                 @Html.DisplayNameFor(model => model.Projects[0].Location)
                             </a>
                         </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort"
-                            asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter">
                                 @Html.DisplayNameFor(model => model.Projects[0].Department)
                             </a>
                         </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort"
-                            asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter">
                                 @Html.DisplayNameFor(model => model.Projects[0].Category)
                             </a>
                         </th>
@@ -101,7 +101,7 @@
                         </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
-                            asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter">
                                 @Html.DisplayNameFor(model => model.Projects[0].Cost)
                             </a>
                         </th>
@@ -133,7 +133,7 @@
                                 @Html.DisplayFor(modelItem => item.Cost)
                             </td>
                             <td>
-                                <a asp-page="./Details" asp-route-id="@item.ProjectId">Details</a>
+                                <a asp-page="./Projects/PublicDetails" asp-route-id="@item.ProjectId">Details</a>
                             </td>
                         </tr>
                     }
@@ -144,18 +144,12 @@
                 var nextDisabled = !Model.Projects.HasNextPage ? "disabled" : "";
             }
 
-            <a asp-page="./Index"
-            asp-route-sortOrder="@Model.CurrentSort"
-            asp-route-pageIndex="@(Model.Projects.PageIndex - 1)"
-            asp-route-currentFilter="@Model.CurrentFilter"
-            class="btn btn-primary @prevDisabled">
+            <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.Projects.PageIndex - 1)"
+                   asp-route-currentFilter="@Model.CurrentFilter" class="btn btn-primary @prevDisabled">
                 Previous
             </a>
-            <a asp-page="./Index"
-            asp-route-sortOrder="@Model.CurrentSort"
-            asp-route-pageIndex="@(Model.Projects.PageIndex + 1)"
-            asp-route-currentFilter="@Model.CurrentFilter"
-            class="btn btn-primary @nextDisabled">
+            <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.Projects.PageIndex + 1)"
+                   asp-route-currentFilter="@Model.CurrentFilter" class="btn btn-primary @nextDisabled">
                 Next
             </a>
         </body>
