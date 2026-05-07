@@ -11,6 +11,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using ContosoUniversity;
 
+
 namespace HendrixAdvancement.Pages;
 
 public class IndexModel : PageModel
