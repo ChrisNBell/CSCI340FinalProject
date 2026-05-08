@@ -35,32 +35,33 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Opportunity) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Project.ProjectId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Priority)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nameable)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.OpportunityId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.OpportunityId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.OpportunityId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Opportunity)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.ProjectId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Priority)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nameable)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.OpportunityId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.OpportunityId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.OpportunityId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

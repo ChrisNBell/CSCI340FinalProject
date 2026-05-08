@@ -12,45 +12,48 @@
 </p>
 <table class="table">
     <thead>
-                    <tr>
-                        <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
-                                @Html.DisplayNameFor(model => model.Project[0].Title)
-                            </a>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Description)
-                        </th>
-                        <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
-                                @Html.DisplayNameFor(model => model.Project[0].Location)
-                            </a>
-                        </th>
-                        <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
-                                @Html.DisplayNameFor(model => model.Project[0].Department)
-                            </a>
-                        </th>
-                        <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
-                                @Html.DisplayNameFor(model => model.Project[0].Category)
-                            </a>
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Project[0].Timeframe)
-                        </th>
-                        <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
-                                @Html.DisplayNameFor(model => model.Project[0].Cost)
-                            </a>
-                        </th>
-                    </tr>
-                </thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort"
+                       asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Project[0].Title)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Description)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort"
+                       asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Project[0].Location)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort"
+                       asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Project[0].Department)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort"
+                       asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Project[0].Category)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Timeframe)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
+                       asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Project[0].Cost)
+                </a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project[0].Approval)
+            </th>
+        </tr>
+    </thead>
     <tbody>
         @foreach (var item in Model.Project)
         {
@@ -75,6 +78,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Approval)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.ProjectId">Edit</a> |

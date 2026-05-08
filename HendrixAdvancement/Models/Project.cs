@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HendrixAdvancement.Models{
+namespace HendrixAdvancement.Models
+{
 
     public enum YesOrNo
     {
