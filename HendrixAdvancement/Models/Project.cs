@@ -33,7 +33,7 @@ namespace HendrixAdvancement.Models
         public decimal Cost { get; set; }
         public string? Image { get; set; }
         public YesOrNo Approval { get; set; }
-        public ICollection<Opportunity>? Opportunities { get; set; }
+        public required ICollection<Opportunity>? Opportunities { get; set; }
     }
 }
 
