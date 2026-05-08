@@ -63,3 +63,13 @@ img{
   background-color: #CB4F0C !important;
   border-color: #CB4F0C !important;
 }
+
+.row{
+  padding-top:2%;
+  padding-bottom:1%;
+}
+
+dt, dd{
+  padding-bottom: 2%
+}
+

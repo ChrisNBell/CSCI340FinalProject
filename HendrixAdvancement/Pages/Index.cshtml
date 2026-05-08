@@ -13,6 +13,8 @@
         rel="stylesheet" />
         <h1>Hendrix Advancement: Project Listings</h1>
         <hr class="hr" />
+        <link rel="stylesheet" href="Index.cshtml.css" />
+        
     </head>
 
     <body>
@@ -61,7 +63,7 @@
                         Search Projects:
                         <input type="text" name="SearchString" value="@Model.CurrentFilter" />
                         <input type="submit" value="Search" class="btn btn-primary" /> |
-                        <a asp-page="./Index">Back to full List</a>
+                        <a asp-page="./Index" style="color: #CB4F0C">Reset</a>
                     </p>
                 </div>
             </form>
@@ -71,37 +73,37 @@
                     <tr>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter" style="color: #CB4F0C"">
                                 @Html.DisplayNameFor(model => model.Projects[0].Title)
                             </a>
                         </th>
-                        <th>
+                        <th style=" color: #CB4F0C">
                             @Html.DisplayNameFor(model => model.Projects[0].Description)
                         </th>
                         <th>
-                            <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
+                            <a asp-page=" ./Index" asp-route-sortOrder="@Model.LocationSort"
+                                   asp-route-currentFilter="@Model.CurrentFilter" style="color: #CB4F0C">
                                 @Html.DisplayNameFor(model => model.Projects[0].Location)
                             </a>
                         </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter" style="color: #CB4F0C">
                                 @Html.DisplayNameFor(model => model.Projects[0].Department)
                             </a>
                         </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter" style="color: #CB4F0C">
                                 @Html.DisplayNameFor(model => model.Projects[0].Category)
                             </a>
                         </th>
-                        <th>
+                        <th style="color: #CB4F0C">
                             @Html.DisplayNameFor(model => model.Projects[0].Timeframe)
                         </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
-                                   asp-route-currentFilter="@Model.CurrentFilter">
+                                   asp-route-currentFilter="@Model.CurrentFilter" style="color: #CB4F0C">
                                 @Html.DisplayNameFor(model => model.Projects[0].Cost)
                             </a>
                         </th>
@@ -145,11 +147,13 @@
             }
 
             <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.Projects.PageIndex - 1)"
-                   asp-route-currentFilter="@Model.CurrentFilter" class="btn btn-primary @prevDisabled">
+                   asp-route-currentFilter="@Model.CurrentFilter" style="background-color: #CB4F0C; border-color:#CB4F0C"
+                   class="btn btn-primary @prevDisabled">
                 Previous
             </a>
             <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.Projects.PageIndex + 1)"
-                   asp-route-currentFilter="@Model.CurrentFilter" class="btn btn-primary @nextDisabled">
+                   asp-route-currentFilter="@Model.CurrentFilter" style="background-color: #CB4F0C; border-color:#CB4F0C"
+                   class="btn btn-primary @nextDisabled">
                 Next
             </a>
         </body>
