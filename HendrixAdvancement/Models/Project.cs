@@ -25,9 +25,13 @@ namespace HendrixAdvancement.Models
         public required string Category { get; set; }
         [Required]
         public required string Timeframe { get; set; }
-        [Required]
+        
         [DataType(DataType.Currency)]
+        public decimal Funded { get; set; }
+        [DataType(DataType.Currency)]
+        [Required]
         public decimal Cost { get; set; }
+        public string? Image { get; set; }
         public YesOrNo Approval { get; set; }
         public ICollection<Opportunity>? Opportunities { get; set; }
     }

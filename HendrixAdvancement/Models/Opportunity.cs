@@ -19,11 +19,14 @@ namespace HendrixAdvancement.Models{
         [Required]
         public required string Title { get; set; }
         public string? Description { get; set; }
-        public Project? Project { get; set; }
+        public required Project Project { get; set; }
         public Priority Priority { get; set; }
         public Status Status { get; set; }
+        // [DataType(DataType.Currency)]
+        // public decimal Funded { get; set; }
         [DataType(DataType.Currency)]
         public decimal Cost { get; set; }
+        public string? Image { get; set; }
         public YesOrNo Nameable { get; set; }
     }
 }

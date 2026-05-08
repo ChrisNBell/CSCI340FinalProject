@@ -18,6 +18,12 @@
             @Html.DisplayFor(model => model.Opportunity.Title)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opportunity.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opportunity.Description)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Opportunity.Project)
         </dt>
         <dd class="col-sm-10">
@@ -35,11 +41,19 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Opportunity.Status)
         </dd>
+        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Opportunity.Cost)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Opportunity.Cost)
+        </dd>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opportunity.Image)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opportunity.Image)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Opportunity.Nameable)

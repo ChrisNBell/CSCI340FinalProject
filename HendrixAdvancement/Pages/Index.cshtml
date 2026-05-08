@@ -101,6 +101,9 @@
                         <th style="color: #CB4F0C">
                             @Html.DisplayNameFor(model => model.Projects[0].Timeframe)
                         </th>
+                        <th style=" color: #CB4F0C">
+                            @Html.DisplayNameFor(model => model.Projects[0].Funded)
+                        </th>
                         <th>
                             <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
                                    asp-route-currentFilter="@Model.CurrentFilter" style="color: #CB4F0C">

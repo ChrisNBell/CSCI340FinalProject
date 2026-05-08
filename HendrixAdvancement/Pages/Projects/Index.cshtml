@@ -44,6 +44,9 @@
                 @Html.DisplayNameFor(model => model.Project[0].Timeframe)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Project[0].Funded)
+            </th>
+            <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
                        asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Project[0].Cost)
@@ -76,6 +79,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Timeframe)
                 </td>
+                <th>
+                    @Html.DisplayNameFor(modelItem => item.Funded)
+                </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cost)
                 </td>

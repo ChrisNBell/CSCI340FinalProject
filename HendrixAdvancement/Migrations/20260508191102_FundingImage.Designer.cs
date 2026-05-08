@@ -2,6 +2,7 @@
 using HendrixAdvancement.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HendrixAdvancement.Migrations
 {
     [DbContext(typeof(HendrixAdvancementContext))]
-    partial class HendrixAdvancementContextModelSnapshot : ModelSnapshot
+    [Migration("20260508191102_FundingImage")]
+    partial class FundingImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.7");
@@ -26,12 +29,6 @@ namespace HendrixAdvancement.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Funded")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Image")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Nameable")
@@ -84,6 +81,7 @@ namespace HendrixAdvancement.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Location")

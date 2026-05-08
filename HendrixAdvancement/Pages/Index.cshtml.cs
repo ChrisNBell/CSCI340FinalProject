@@ -9,22 +9,16 @@ using HendrixAdvancement.Data;
 using HendrixAdvancement.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using ContosoUniversity;
+using HendrixAdvancement.Pages;
 
 
 namespace HendrixAdvancement.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel(HendrixAdvancementContext context, IConfiguration configuration) : PageModel
 {
 
-    private readonly HendrixAdvancementContext _context;
-    private readonly IConfiguration Configuration;
-
-    public IndexModel(HendrixAdvancementContext context, IConfiguration configuration)
-    {
-        _context = context;
-        Configuration = configuration;
-    }
+    private readonly HendrixAdvancementContext _context = context;
+    private readonly IConfiguration Configuration = configuration;
 
     public string TitleSort { get; set; }
     public string LocationSort { get; set; }
