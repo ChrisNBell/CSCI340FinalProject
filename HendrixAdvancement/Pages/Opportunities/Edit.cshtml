@@ -31,13 +31,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="Opportunity.Priority" class="control-label"></label>
-                <select asp-for="Opportunity.Priority" class="form-control" ></select>
-                <span asp-validation-for="Opportunity.Priority" class="text-danger"></span>
+                <select asp-for="Opportunity.Priority" class="form-control" 
+                    asp-items="@Html.GetEnumSelectList<Models.Priority>()">
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="Opportunity.Status" class="control-label"></label>
-                <select asp-for="Opportunity.Status" class="form-control" ></select>
-                <span asp-validation-for="Opportunity.Status" class="text-danger"></span>
+                <select asp-for="Opportunity.Status" class="form-control" 
+                    asp-items="@Html.GetEnumSelectList<Models.Status>()">
+                </select>>
             </div>
             <div class="form-group">
                 <label asp-for="Opportunity.Cost" class="control-label"></label>
@@ -51,8 +53,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Opportunity.Nameable" class="control-label"></label>
-                <select asp-for="Opportunity.Nameable" class="form-control" ></select>
-                <span asp-validation-for="Opportunity.Nameable" class="text-danger"></span>
+                <select asp-for="Opportunity.Nameable" class="form-control" 
+                    asp-items="@Html.GetEnumSelectList<Models.YesOrNo>()">
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
