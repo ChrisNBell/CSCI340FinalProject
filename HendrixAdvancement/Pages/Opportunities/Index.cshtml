@@ -29,6 +29,9 @@
                 @Html.DisplayNameFor(model => model.Opportunity[0].Status)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Opportunity[0].Funded)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Opportunity[0].Cost)
             </th>
             <th>
@@ -55,6 +58,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Funded)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cost)

@@ -68,9 +68,12 @@
             <table class="table">
                 <tr>
                     <th>Title</th>
+                    <th>Description</th>
                     <th>Priority</th>
                     <th>Status</th>
+                    <th>Funded</th>
                     <th>Cost</th>
+                    <th>Image</th>
                 </tr>
                 @foreach (var item in Model.Project.Opportunities)
                 {
@@ -86,6 +89,9 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Funded)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Cost)

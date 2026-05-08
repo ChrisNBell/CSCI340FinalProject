@@ -42,6 +42,11 @@
                 </select>>
             </div>
             <div class="form-group">
+                <label asp-for="Opportunity.Funded" class="control-label"></label>
+                <input asp-for="Opportunity.Funded" class="form-control" />
+                <span asp-validation-for="Opportunity.Funded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Opportunity.Cost" class="control-label"></label>
                 <input asp-for="Opportunity.Cost" class="form-control" />
                 <span asp-validation-for="Opportunity.Cost" class="text-danger"></span>

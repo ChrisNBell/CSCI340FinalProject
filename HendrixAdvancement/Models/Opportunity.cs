@@ -9,7 +9,10 @@ namespace HendrixAdvancement.Models{
 
     public enum Status
     {
-        Open, PartiallyFunded, Funded
+        Open, 
+        [Display(Name = "Partialy Funded")]
+        PartiallyFunded, 
+        Funded
     }
 
     public class Opportunity
@@ -22,8 +25,8 @@ namespace HendrixAdvancement.Models{
         public required Project Project { get; set; }
         public Priority Priority { get; set; }
         public Status Status { get; set; }
-        // [DataType(DataType.Currency)]
-        // public decimal Funded { get; set; }
+        [DataType(DataType.Currency)]
+        public decimal? Funded { get; set; }
         [DataType(DataType.Currency)]
         public decimal Cost { get; set; }
         public string? Image { get; set; }
