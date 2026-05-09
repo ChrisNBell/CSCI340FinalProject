@@ -82,3 +82,11 @@ dt, dd{
   padding-bottom: 2%
 }
 
+h3{
+    padding-top: 1.2%;
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0.229em;
+    color: #111
+}

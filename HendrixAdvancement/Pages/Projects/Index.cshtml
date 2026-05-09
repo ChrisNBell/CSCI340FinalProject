@@ -5,95 +5,104 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <img id="HDX" src="~/images/hendrixLogo_bob.svg" alt="Hendrix Logo" width="300px">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Iceberg&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Macondo&display=swap"
+        rel="stylesheet" />
+        <h1>Projects Database</h1>
+        <hr class="hr" />
+        <link rel="stylesheet" href="Index.cshtml.css" />
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.TitleSort"
-                       asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Project[0].Title)
-                </a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project[0].Description)
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.LocationSort"
-                       asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Project[0].Location)
-                </a>
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort"
-                       asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Project[0].Department)
-                </a>
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.CategorySort"
-                       asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Project[0].Category)
-                </a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project[0].Timeframe)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project[0].Funded)
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
-                       asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Project[0].Cost)
-                </a>
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project[0].Approval)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Project)
-        {
+    </head>
+
+    <p>
+        <a style="color: #CB4F0C" asp-page="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Location)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Department)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Timeframe)
-                </td>
                 <th>
-                    @Html.DisplayNameFor(modelItem => item.Funded)
+                    <a style="color: #CB4F0C" asp-page="./Index" asp-route-sortOrder="@Model.TitleSort"
+                           asp-route-currentFilter="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Project[0].Title)
+                    </a>
                 </th>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Approval)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ProjectId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ProjectId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ProjectId">Delete</a>
-                </td>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Project[0].Description)
+                </th>
+                <th>
+                    <a style="color: #CB4F0C" asp-page="./Index" asp-route-sortOrder="@Model.LocationSort"
+                           asp-route-currentFilter="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Project[0].Location)
+                    </a>
+                </th>
+                <th>
+                    <a style="color: #CB4F0C" asp-page="./Index" asp-route-sortOrder="@Model.DepartmentSort"
+                           asp-route-currentFilter="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Project[0].Department)
+                    </a>
+                </th>
+                <th>
+                    <a style="color: #CB4F0C" asp-page="./Index" asp-route-sortOrder="@Model.CategorySort"
+                           asp-route-currentFilter="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Project[0].Category)
+                    </a>
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Project[0].Timeframe)
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Project[0].Funded)
+                </th>
+                <th>
+                    <a style="color: #CB4F0C" asp-page="./Index" asp-route-sortOrder="@Model.CostSort"
+                           asp-route-currentFilter="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Project[0].Cost)
+                    </a>
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Project[0].Approval)
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Project)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Location)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Timeframe)
+                    </td>
+                    <th>
+                        @Html.DisplayNameFor(modelItem => item.Funded)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Approval)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ProjectId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ProjectId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ProjectId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

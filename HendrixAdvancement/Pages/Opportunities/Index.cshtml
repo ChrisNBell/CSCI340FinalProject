@@ -5,75 +5,86 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<head>
+    <img id="HDX" src="~/images/hendrixLogo_bob.svg" alt="Hendrix Logo" width="300px">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Iceberg&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Macondo&display=swap"
+        rel="stylesheet" />
+        <h1>Opportunities Database</h1>
+        <hr class="hr" />
+        <link rel="stylesheet" href="Index.cshtml.css" />
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Project)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Priority)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Funded)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Cost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Opportunity[0].Nameable)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Opportunity)
-        {
+    </head>
+
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Project.ProjectId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Priority)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Funded)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cost)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nameable)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.OpportunityId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.OpportunityId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.OpportunityId">Delete</a>
-                </td>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Title)
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Description)
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Project)
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Priority)
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Status)
+                </th style="color: #CB4F0C">
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Funded)
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Cost)
+                </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Opportunity[0].Nameable)
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Opportunity)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Project.ProjectId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Funded)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nameable)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.OpportunityId">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.OpportunityId">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.OpportunityId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+

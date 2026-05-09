@@ -1,76 +1,85 @@
 @page
 @model HendrixAdvancement.Pages.Opportunities.CreateModel
 
-        @{
-        ViewData["Title"] = "Create";
-        }
-        
-        <h1>Create</h1>
-        
-    <h4>Opportunity</h4>
-    <hr />
-    <div class="row">
-    <div class="col-md-4">
-    <form method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Opportunity.ProjectID" class="control-label"></label>
-                <select asp-for="Opportunity.ProjectID" class ="form-control" asp-items="ViewBag.ProjectID" ></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Title" class="control-label"></label>
-                <input asp-for="Opportunity.Title" class="form-control" />
-                <span asp-validation-for="Opportunity.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Description" class="control-label"></label>
-                <input asp-for="Opportunity.Description" class="form-control" />
-                <span asp-validation-for="Opportunity.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Priority" class="control-label"></label>
-                <select asp-for="Opportunity.Priority" class="form-control" 
-                    asp-items="@Html.GetEnumSelectList<Models.Priority>()">
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Status" class="control-label"></label>
-                <select asp-for="Opportunity.Status" class="form-control" 
-                    asp-items="@Html.GetEnumSelectList<Models.Status>()">
-                </select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Funded" class="control-label"></label>
-                <input asp-for="Opportunity.Funded" class="form-control" />
-                <span asp-validation-for="Opportunity.Funded" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Cost" class="control-label"></label>
-                <input asp-for="Opportunity.Cost" class="form-control" />
-                <span asp-validation-for="Opportunity.Cost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Image" class="control-label"></label>
-                <input asp-for="Opportunity.Image" class="form-control" />
-                <span asp-validation-for="Opportunity.Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Opportunity.Nameable" class="control-label"></label>
-                <select asp-for="Opportunity.Nameable" class="form-control" 
-                    asp-items="@Html.GetEnumSelectList<Models.YesOrNo>()">
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+@{
+    ViewData["Title"] = "Create";
 }
+
+        
+<head>
+    <img id="HDX" src="~/images/hendrixLogo_bob.svg" alt="Hendrix Logo" width="300px">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Iceberg&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Macondo&display=swap"
+        rel="stylesheet" />
+        <h1>Opportunities Database: Create</h1>
+        <hr class="hr" />
+        <link rel="stylesheet" href="Index.cshtml.css" />
+
+    </head>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.ProjectID" class="control-label"></label>
+                    <select asp-for="Opportunity.ProjectID" class="form-control" asp-items="ViewBag.ProjectID"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Title" class="control-label"></label>
+                    <input asp-for="Opportunity.Title" class="form-control" />
+                    <span asp-validation-for="Opportunity.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Description" class="control-label"></label>
+                    <input asp-for="Opportunity.Description" class="form-control" />
+                    <span asp-validation-for="Opportunity.Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Priority" class="control-label"></label>
+                    <select asp-for="Opportunity.Priority" class="form-control"
+                            asp-items="@Html.GetEnumSelectList<Models.Priority>()">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Status" class="control-label"></label>
+                    <select asp-for="Opportunity.Status" class="form-control"
+                            asp-items="@Html.GetEnumSelectList<Models.Status>()">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Funded" class="control-label"></label>
+                    <input asp-for="Opportunity.Funded" class="form-control" />
+                    <span asp-validation-for="Opportunity.Funded" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Cost" class="control-label"></label>
+                    <input asp-for="Opportunity.Cost" class="form-control" />
+                    <span asp-validation-for="Opportunity.Cost" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Image" class="control-label"></label>
+                    <input asp-for="Opportunity.Image" class="form-control" />
+                    <span asp-validation-for="Opportunity.Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Opportunity.Nameable" class="control-label"></label>
+                    <select asp-for="Opportunity.Nameable" class="form-control"
+                            asp-items="@Html.GetEnumSelectList<Models.YesOrNo>()">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

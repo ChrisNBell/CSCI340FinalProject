@@ -8,18 +8,17 @@ using Microsoft.EntityFrameworkCore;
 using HendrixAdvancement.Data;
 using HendrixAdvancement.Models;
 
-namespace HendrixAdvancement.Pages_Projects
+namespace HendrixAdvancement.Pages.Opportunities
 {
-    public class PublicDetailsModel : PageModel
+    public class Details2Model : PageModel
     {
         private readonly HendrixAdvancement.Data.HendrixAdvancementContext _context;
 
-        public PublicDetailsModel(HendrixAdvancement.Data.HendrixAdvancementContext context)
+        public Details2Model(HendrixAdvancement.Data.HendrixAdvancementContext context)
         {
             _context = context;
         }
 
-        public Project Project { get; set; } = default!;
         public Opportunity Opportunity { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -29,14 +28,11 @@ namespace HendrixAdvancement.Pages_Projects
                 return NotFound();
             }
 
-            var project = await _context.Projects
-                .Include(s => s.Opportunities)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ProjectId == id);
+            var opportunity = await _context.Opportunities.FirstOrDefaultAsync(m => m.OpportunityId == id);
 
-            if (project is not null)
+            if (opportunity is not null)
             {
-                Project = project;
+                Opportunity = opportunity;
 
                 return Page();
             }

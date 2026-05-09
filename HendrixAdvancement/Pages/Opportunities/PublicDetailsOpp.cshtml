@@ -1,0 +1,67 @@
+@page
+@model HendrixAdvancement.Pages.Opportunities.Details2Model
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <img id="HDX" src="~/images/hendrixLogo_bob.svg" alt="Hendrix Logo" width="300px">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Iceberg&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Macondo&display=swap"
+        rel="stylesheet" />
+        <h1> @Html.DisplayFor(model => model.Opportunity.Title)</h1>
+        <hr class="hr" />
+        <link rel="stylesheet" href="Index.cshtml.css" />
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <dd class="col-6">
+                    @Html.DisplayFor(model => model.Opportunity.Description)
+                    <div class="row">
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Opportunity.Funded)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Opportunity.Funded)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Opportunity.Cost)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Opportunity.Cost)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Opportunity.Nameable)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Opportunity.Nameable)
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dd class="col-6"><img id="Galloway" src="~/images/Galloway.jpg" alt="Galloway" width="500px">
+                    </dd>
+                </div>
+
+                <div class="row" id="progress-bar">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div>
+                <a asp-page="/Index">Back to Home Page</a>
+            </div>
+        </div>
+
+
+    </body>

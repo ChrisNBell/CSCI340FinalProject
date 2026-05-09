@@ -5,78 +5,85 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<head>
+    <img id="HDX" src="~/images/hendrixLogo_bob.svg" alt="Hendrix Logo" width="300px">
+        <link
+        href="https://fonts.googleapis.com/css2?family=Iceberg&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Macondo&display=swap"
+        rel="stylesheet" />
+        <h1>Projects Database: Edit</h1>
+        <hr class="hr" />
+        <link rel="stylesheet" href="Index.cshtml.css" />
 
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Project.ProjectId" />
-            <div class="form-group">
-                <label asp-for="Project.Title" class="control-label"></label>
-                <input asp-for="Project.Title" class="form-control" />
-                <span asp-validation-for="Project.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Description" class="control-label"></label>
-                <input asp-for="Project.Description" class="form-control" />
-                <span asp-validation-for="Project.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Location" class="control-label"></label>
-                <input asp-for="Project.Location" class="form-control" />
-                <span asp-validation-for="Project.Location" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Department" class="control-label"></label>
-                <input asp-for="Project.Department" class="form-control" />
-                <span asp-validation-for="Project.Department" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Category" class="control-label"></label>
-                <input asp-for="Project.Category" class="form-control" />
-                <span asp-validation-for="Project.Category" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Timeframe" class="control-label"></label>
-                <input asp-for="Project.Timeframe" class="form-control" />
-                <span asp-validation-for="Project.Timeframe" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Funded" class="control-label"></label>
-                <input asp-for="Project.Funded" class="form-control" />
-                <span asp-validation-for="Project.Funded" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Cost" class="control-label"></label>
-                <input asp-for="Project.Cost" class="form-control" />
-                <span asp-validation-for="Project.Cost" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Image" class="control-label"></label>
-                <input asp-for="Project.Image" class="form-control" />
-                <span asp-validation-for="Project.Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Project.Approval" class="control-label"></label>
-                <select asp-for="Project.Approval" class="form-control" 
-                    asp-items="@Html.GetEnumSelectList<Models.YesOrNo>()">
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    </head>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Project.ProjectId" />
+                <div class="form-group">
+                    <label asp-for="Project.Title" class="control-label"></label>
+                    <input asp-for="Project.Title" class="form-control" />
+                    <span asp-validation-for="Project.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Description" class="control-label"></label>
+                    <input asp-for="Project.Description" class="form-control" />
+                    <span asp-validation-for="Project.Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Location" class="control-label"></label>
+                    <input asp-for="Project.Location" class="form-control" />
+                    <span asp-validation-for="Project.Location" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Department" class="control-label"></label>
+                    <input asp-for="Project.Department" class="form-control" />
+                    <span asp-validation-for="Project.Department" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Category" class="control-label"></label>
+                    <input asp-for="Project.Category" class="form-control" />
+                    <span asp-validation-for="Project.Category" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Timeframe" class="control-label"></label>
+                    <input asp-for="Project.Timeframe" class="form-control" />
+                    <span asp-validation-for="Project.Timeframe" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Funded" class="control-label"></label>
+                    <input asp-for="Project.Funded" class="form-control" />
+                    <span asp-validation-for="Project.Funded" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Cost" class="control-label"></label>
+                    <input asp-for="Project.Cost" class="form-control" />
+                    <span asp-validation-for="Project.Cost" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Image" class="control-label"></label>
+                    <input asp-for="Project.Image" class="form-control" />
+                    <span asp-validation-for="Project.Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Project.Approval" class="control-label"></label>
+                    <select asp-for="Project.Approval" class="form-control"
+                            asp-items="@Html.GetEnumSelectList<Models.YesOrNo>()">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+    <div>
+        <a asp-page="./Index">Back to List</a>
+    </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
     }
-}

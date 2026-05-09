@@ -75,12 +75,7 @@ namespace HendrixAdvancement.Pages_Projects
                     break;
             }
 
-
-
-
             Project = await _context.Projects.ToListAsync();
-
-
 
         }
     }
