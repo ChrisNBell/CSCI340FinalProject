@@ -73,15 +73,18 @@
                 @Html.DisplayFor(model => model.Project.Image)
             </dd>
             <dd class="col-sm-10">
+                <p>
+                    <a style="color: #CB4F0C;" asp-page="/Opportunities/Create">Create New Opportunity</a>
+                </p>
                 <table class="table">
                     <tr>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Priority</th>
-                        <th>Status</th>
-                        <th>Funded</th>
-                        <th>Cost</th>
-                        <th>Image</th>
+                        <th id="headings">Title</th>
+                        <th id="headings">Description</th>
+                        <th id="headings">Priority</th>
+                        <th id="headings">Status</th>
+                        <th id="headings">Funded</th>
+                        <th id="headings">Cost</th>
+                        <th id="headings">Image</th>
                     </tr>
                     @foreach (var item in Model.Project.Opportunities)
                     {
@@ -105,7 +108,12 @@
                                 @Html.DisplayFor(modelItem => item.Cost)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Image)
+                                <img id="Image" src="@item.Image" alt="Image" width="50px">
+                            </td>
+                            <td>
+                                <a asp-page="/Opportunities/Edit" asp-route-id="@item.OpportunityId">Edit</a> |
+                                <a asp-page="/Opportunities/Details" asp-route-id="@item.OpportunityId">Details</a> |
+                                <a asp-page="/Opportunities/Delete" asp-route-id="@item.OpportunityId">Delete</a>
                             </td>
                         </tr>
                     }

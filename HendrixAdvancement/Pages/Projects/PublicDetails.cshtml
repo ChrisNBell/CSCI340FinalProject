@@ -47,6 +47,12 @@
                                 @Html.DisplayFor(model => model.Project.Timeframe)
                             </dd>
                             <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Project.Funded)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Project.Funded)
+                            </dd>
+                            <dt class="col-sm-2">
                                 @Html.DisplayNameFor(model => model.Project.Cost)
                             </dt>
                             <dd class="col-sm-10">
@@ -59,50 +65,54 @@
                 </dd>
             </div>
     
-            <div class="row" id="progress-bar">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
-                         aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                     style="width:@((Model.Project.Funded / Model.Project.Cost) * 100)%"
+                     aria-valuenow="@((Model.Project.Funded / Model.Project.Cost) * 100)" aria-valuemin="0"
+                     aria-valuemax="100">@Html.DisplayFor(model => model.Project.Funded) / @Html.DisplayFor(model =>
+                                                                                                                                                                                                                                                                                                                                                                                    model.Project.Cost)</div>
                 </div>
             </div>
 
-        </div>
-        <hr class="hr" />
-        <div>
-            <h1>Opportunities</h1>
-            <dd class="col-sm-10">
-                <table class="table">
-                    <tr>
-                        <th id="headings">Title</th>
-                        <th id="headings">Description</th>
-                        <th id="headings">Funded</th>
-                        <th id="headings">Cost</th>
-                    </tr>
-                    @foreach (var item in Model.Project.Opportunities)
-                    {
+            <div>
+                <h1 style="padding-top: 3%">Opportunities</h1>
+                <hr class="hr" />
+                <dd class="col-sm-10">
+                    <table class="table">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Title)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Description)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Funded)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Cost)
-                            </td>
-                            <td>
-                                <a asp-page="/Opportunities/PublicDetailsOpp" asp-route-id="@item.OpportunityId">Details</a>
-                            </td>
+                            <th id="headings">Title</th>
+                            <th id="headings">Description</th>
+                            <th id="headings">Funded</th>
+                            <th id="headings">Cost</th>
                         </tr>
-                    }
-                </table>
-            </dd>
-        </div>
-        <div>
-            <a asp-page="/Index">Back to Home Page</a>
+                        @foreach (var item in Model.Project.Opportunities)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Funded)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cost)
+                                </td>
+                                <td>
+                                    <a asp-page="/Opportunities/PublicDetailsOpp" asp-route-id="@item.OpportunityId">Details</a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </dd>
+            </div>
+
+            <div>
+                <a asp-page="/Index">Back to Home Page</a>
+            </div>
+
         </div>
     </body>
 

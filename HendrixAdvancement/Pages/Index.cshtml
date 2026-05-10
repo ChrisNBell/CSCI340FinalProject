@@ -158,17 +158,6 @@
                 var prevDisabled = !Model.Projects.HasPreviousPage ? "disabled" : "";
                 var nextDisabled = !Model.Projects.HasNextPage ? "disabled" : "";
             }
-
-            <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.Projects.PageIndex - 1)"
-                   asp-route-currentFilter="@Model.CurrentFilter" style="background-color: #CB4F0C; border-color:#CB4F0C"
-                   class="btn btn-primary @prevDisabled">
-                Previous
-            </a>
-            <a asp-page="./Index" asp-route-sortOrder="@Model.CurrentSort" asp-route-pageIndex="@(Model.Projects.PageIndex + 1)"
-                   asp-route-currentFilter="@Model.CurrentFilter" style="background-color: #CB4F0C; border-color:#CB4F0C"
-                   class="btn btn-primary @nextDisabled">
-                Next
-            </a>
         </body>
 
     </html>
