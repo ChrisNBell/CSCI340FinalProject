@@ -1,4 +1,6 @@
 ﻿@page
+@using HendrixAdvancement.Migrations
+@using HendrixAdvancement.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -115,35 +117,40 @@
                 <tbody>
                     @foreach (var item in Model.Projects)
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Title)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Description)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Location)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Department)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Category)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Timeframe)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Funded)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Cost)
-                            </td>
-                            <td>
-                                <a asp-page="./Projects/PublicDetails" asp-route-id="@item.ProjectId">Details</a>
-                            </td>
-                        </tr>
+                        @if (item.Approval == YesOrNo.Yes)
+                        {
+
+                            
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Location)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Department)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Timeframe)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Funded)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cost)
+                                </td>
+                                <td>
+                                    <a asp-page="./Projects/PublicDetails" asp-route-id="@item.ProjectId">Details</a>
+                                </td>
+                            </tr>
+                        }
                     }
                 </tbody>
             </table>

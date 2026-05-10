@@ -33,24 +33,24 @@ public class IndexModel(HendrixAdvancementContext context, IConfiguration config
         string currentFilter, int? pageIndex)
     {
         CurrentSort = sortOrder;
-        TitleSort = String.IsNullOrEmpty(sortOrder) ? "title_desc": "";
+        TitleSort = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
         LocationSort = sortOrder == "Location" ? "location_desc" : "Location";
         DepartmentSort = sortOrder == "Department" ? "department_desc" : "Department";
-        CategorySort = sortOrder == "Category" ? "category_desc" : "Category"; 
+        CategorySort = sortOrder == "Category" ? "category_desc" : "Category";
         CostSort = sortOrder == "Cost" ? "Cost_desc" : "Cost";
         if (searchString != null)
-            {
-                pageIndex = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
+        {
+            pageIndex = 1;
+        }
+        else
+        {
+            searchString = currentFilter;
+        }
 
         CurrentFilter = searchString;
 
         IQueryable<Project> projectsIQ = from p in _context.Projects
-                                        select p;
+                                         select p;
         if (!String.IsNullOrEmpty(searchString))
         {
             projectsIQ = projectsIQ.Where(p => p.Title.ToUpper().Contains(searchString.ToUpper()));
@@ -86,15 +86,18 @@ public class IndexModel(HendrixAdvancementContext context, IConfiguration config
             case "cost_desc":
                 projectsIQ = projectsIQ.OrderByDescending(p => p.Cost);
                 break;
-            default: 
+            default:
                 projectsIQ = projectsIQ.OrderBy(p => p.Title);
                 break;
         }
 
         var pageSize = Configuration.GetValue("PageSize", 11);
-            Projects = await PaginatedList<Project>.CreateAsync(
-                projectsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
+        Projects = await PaginatedList<Project>.CreateAsync(
+            projectsIQ.AsNoTracking(), pageIndex ?? 1, pageSize);
+
+
     }
+
 }
 
 
