@@ -46,7 +46,7 @@
                     <label asp-for="Opportunity.Status" class="control-label"></label>
                     <select asp-for="Opportunity.Status" class="form-control"
                             asp-items="@Html.GetEnumSelectList<Models.Status>()">
-                    </select>>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label asp-for="Opportunity.Funded" class="control-label"></label>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Opportunity.Image" class="control-label"></label>
-                    <input asp-for="Opportunity.Cost" class="form-control" />
+                    <input asp-for="Opportunity.Image" class="form-control" />
                     <span asp-validation-for="Opportunity.Image" class="text-danger"></span>
                 </div>
                 <div class="form-group">

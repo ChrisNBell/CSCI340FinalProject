@@ -11,6 +11,13 @@ namespace HendrixAdvancement.Models
         Pending, Yes, No
     }
 
+    public enum Categories
+    {
+        Space, Equipment, Program, Other
+    }
+
+
+
     public class Project
     {
         public int ProjectId { get; set; }
@@ -22,10 +29,10 @@ namespace HendrixAdvancement.Models
         [Required]
         public required string Department { get; set; }
         [Required]
-        public required string Category { get; set; }
+        public required Categories Category { get; set; }
         [Required]
         public required string Timeframe { get; set; }
-        
+
         [DataType(DataType.Currency)]
         public decimal Funded { get; set; }
         [DataType(DataType.Currency)]

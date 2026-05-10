@@ -42,8 +42,9 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Project.Category" class="control-label"></label>
-                    <input asp-for="Project.Category" class="form-control" />
-                    <span asp-validation-for="Project.Category" class="text-danger"></span>
+                    <select asp-for="Project.Category" class="form-control"
+                            asp-items="@Html.GetEnumSelectList<Models.Categories>()">
+                    </select>
                 </div>
                 <div class="form-group">
                     <label asp-for="Project.Timeframe" class="control-label"></label>

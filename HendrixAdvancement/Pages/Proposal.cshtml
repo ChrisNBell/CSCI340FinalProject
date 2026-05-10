@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Propose a Project";
 }
-    <h1>
+<h1>
     <img id="HDX" src="~/images/hendrixLogo_bob.svg" alt="Hendrix Logo" width="300px">
         <link
         href="https://fonts.googleapis.com/css2?family=Iceberg&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Macondo&display=swap"
@@ -11,73 +11,88 @@
         <h1>Hendrix Advancement: Project Proposal Page</h1>
         <hr class="hr" />
     </h1>
-<section class="container">
-    <div class="row">
-        <div class="col-6">
+    <section class="container">
+        <div class="row">
             <h2>Have a Project That You Want To Propose?</h2>
-            <p>We welcome any Faculty and Staff who have an idea or a current project that could have potential funding needs to submit the project 
-                proposal form below. All we need is some information about the project, then, upon approval, your project will be available on the 
+            <p>We welcome any Faculty and Staff who have an idea or a current project that could have potential funding
+                needs to submit the project
+                proposal form below. All we need is some information about the project, then, upon approval, your
+                project will be available on the
                 Advancement website and available to potential doners.
             </p>
-
-
-            <form>
-                <p><label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname"><br></p>
-
-                <p><label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname"></p>
-            
-                <p>Are you a member of the Hendrix Faculty?</p>
-                <p><input type="checkbox" id="yfaculty" name="yfaculty" value="yes">
-                <label for="yfaculty"> Yes</label><br>
-                <input type="checkbox" id="nfaculty" name="nfaculty" value="no">
-                <label for="nfaculty"> No</label><br></p>
-
-                <p><label for="title">Title of the project</label><br>
-                <input type="text" id="title" name="title"><br></p>
-
-                <p><label for="description">Please give a brief description of the project</label><br>
-                <input type="text" id="description" name="description"></p>
-
-                <p><label for="location">Where is your project located?</label><br>
-                <input type="text" id="location" name="location"><br></p>
-
-                <p><label for="department">What department is your project in?</label><br>
-                <input type="text" id="department" name="department"></p>
-
-                <p>What category is your project?</p>
-                <p><input type="radio" id="cat1" name="cat1" value="First category">
-                <label for="cat1">First category</label><br>
-                <input type="radio" id="cat2" name="cat2" value="Second category">
-                <label for="cat2">Second category</label><br>
-                <input type="radio" id="cat3" name="cat3" value="Third category">
-                <label for="cat3">Third category</label><br></p>
-
-
-                <p><label for="time">What is the time frame of this project?</label><br>
-                <input type="text" id="time" name="time"></p>
-
-                <p><label for="cost">How much funding is needed?</label><br>
-                <input type="text" id="cost" name="cost"></p>
-
-                <p><label for="nameable">Are there any doner naming opportunities?</label><br>
-                <input type="text" id="nameable" name="nameable"></p>
-
-                <p><input type="submit" value="Submit"></p>
-            </form>
-
-
-
-            <h4>Have Questions About This Process?</h4>
-            <p>
-            <ul style="list-style-type:circle;">
-                <li><a class="nav-link" asp-area="" asp-page="/About">Click Here</a></li> 
-                <li> or click on the about tab to contact the Advancement Office</li>
-            </ul>
-            </p>
         </div>
-    </div>
-</section>
+
+        <div class="row">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <p><strong><label for="title">What is the title of your project?</label></strong><br></p>
+                    <input asp-for="Project.Title" class="form-control mx-auto"
+                           style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;" />
+                    <span asp-validation-for="Project.Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <p><strong><label for="description">Please give a brief description of the
+                        project</label></strong><br></p>
+                        <input asp-for="Project.Description" class="form-control mx-auto"
+                               style="width: 300px; justify-content: center; border-color: #CB4F0C; border-width: 2px; text-align: top" />
+                        <span asp-validation-for="Project.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <p><strong><label for="location">Where is your project located?</label></strong><br></p>
+                        <input asp-for="Project.Location" class="form-control  mx-auto"
+                               style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;" />
+                        <span asp-validation-for="Project.Location" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <p><strong><label for="department">What department is your project in?</label></strong><br></p>
+                        <input asp-for="Project.Department" class="form-control mx-auto"
+                               style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;" />
+                        <span asp-validation-for="Project.Department" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <p><strong><label for="category">What category is your project?</label></strong><br></p>
+                        <select asp-for="Project.Category" class="form-control mx-auto"
+                                style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;"
+                                asp-items="@Html.GetEnumSelectList<Models.Categories>()">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <p><strong><label for="timeframe">What is the time frame of this project?</label></strong><br></p>
+                        <input asp-for="Project.Timeframe" class="form-control mx-auto"
+                               style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;" />
+                        <span asp-validation-for="Project.Timeframe" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <p><strong><label for="funded">How much has been contributed to this project
+                            already?</label></strong><br></p>
+                            <input asp-for="Project.Funded" class="form-control mx-auto"
+                                   style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;" />
+                            <span asp-validation-for="Project.Funded" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <p><strong><label for="cost">What is the total cost of this project?</label></strong><br></p>
+                            <input asp-for="Project.Cost" class="form-control mx-auto"
+                                   style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;" />
+                            <span asp-validation-for="Project.Cost" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <p><strong><label for="image">Please give a url for an image to be associated with this
+                                project (optional)</label></strong><br></p>
+                                <input asp-for="Project.Image" class="form-control mx-auto"
+                                       style="width: 300px; justify-content: center; text-align: center; border-color: #CB4F0C; border-width: 2px;" />
+                                <span asp-validation-for="Project.Image" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-primary" />
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <div>
+                        <a asp-page="Index">Back to List</a>
+                    </div>
+                </section>
 
 

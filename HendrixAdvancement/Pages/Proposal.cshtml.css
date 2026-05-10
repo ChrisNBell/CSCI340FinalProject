@@ -1,6 +1,30 @@
-th, td {
-  text-align: left;
+.table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: black;
+  border-width: 2px;
+  width: 100%;
+  border: 2px solid black;
+  padding-top: 1%;
+  text-align: center;
+}
+
+th, td{
   padding: 8px;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  color: rgb(68.85, 68.85, 68.85);
+}
+
+#headings{
+  padding: 8px;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  color: #CB4F0C;
+
+}
+
+.back-link{
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  color: rgb(69, 69, 69);
 }
 
 h1{
@@ -10,12 +34,14 @@ h1{
     margin-top: 0;
     margin-bottom: 0.229em;
     color: #111
-
-}
-.nav-link{
-    color: #0000EE; 
 }
 
+th a.project-heading {
+    color: #CB4F0C;
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 h2{
   padding-top: 0.5%;
@@ -28,16 +54,7 @@ h2{
   text-align: center;
 }
 
-
-h4{
-    font-family: "Merriweather", "Times New Roman", Times, serif;
-    font-weight: 800;
-    margin-top: 0;
-    margin-bottom: 0.229em;
-}
-
-
-p{
+p {
   font-family: "Merriweather Sans", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.46;
@@ -46,4 +63,32 @@ p{
 
 tr:nth-child(even){background-color: #f2f2f2}
 
+img{
+  display: flex;
+}
 
+.btn-primary{
+  background-color: #CB4F0C !important;
+  border-color: #CB4F0C !important;
+}
+
+.row{
+  text-align: center;
+  display: flex;
+  padding-top:2%;
+  padding-bottom:1%;
+}
+
+dt, dd{
+  padding-bottom: 2%
+}
+
+.form-group{
+  padding-bottom: 5%;
+}
+
+.col-sm-4{
+  text-align: center;
+  display: flex;
+  align-items: center;
+}

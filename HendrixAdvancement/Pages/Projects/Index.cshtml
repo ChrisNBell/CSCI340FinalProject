@@ -64,6 +64,9 @@
                 <th style="color: #CB4F0C">
                     @Html.DisplayNameFor(model => model.Project[0].Approval)
                 </th>
+                <th style="color: #CB4F0C">
+                    @Html.DisplayNameFor(model => model.Project[0].Image)
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -89,13 +92,17 @@
                         @Html.DisplayFor(modelItem => item.Timeframe)
                     </td>
                     <th>
-                        @Html.DisplayNameFor(modelItem => item.Funded)
+                        @Html.DisplayFor(modelItem => item.Funded)
                     </th>
                     <td>
                         @Html.DisplayFor(modelItem => item.Cost)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Approval)
+                    </td>
+
+                    <td>
+                        <img id="Image" src="@item.Image" alt="Image" width="50px">
                     </td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.ProjectId">Edit</a> |
