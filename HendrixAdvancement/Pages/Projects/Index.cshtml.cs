@@ -10,14 +10,9 @@ using HendrixAdvancement.Models;
 
 namespace HendrixAdvancement.Pages_Projects
 {
-    public class IndexModel : PageModel
+    public class IndexModel(HendrixAdvancement.Data.HendrixAdvancementContext context) : PageModel
     {
-        private readonly HendrixAdvancement.Data.HendrixAdvancementContext _context;
-
-        public IndexModel(HendrixAdvancement.Data.HendrixAdvancementContext context)
-        {
-            _context = context;
-        }
+        private readonly HendrixAdvancement.Data.HendrixAdvancementContext _context = context;
 
         public string TitleSort { get; set; }
         public string LocationSort { get; set; }
@@ -29,7 +24,7 @@ namespace HendrixAdvancement.Pages_Projects
 
         public IList<Project> Project { get; set; } = default!;
 
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
             CurrentSort = sortOrder;
             TitleSort = String.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
@@ -38,8 +33,15 @@ namespace HendrixAdvancement.Pages_Projects
             CategorySort = sortOrder == "Category" ? "category_desc" : "Category";
             CostSort = sortOrder == "Cost" ? "Cost_desc" : "Cost";
 
+            CurrentFilter = searchString;
+
             IQueryable<Project> projectsIQ = from p in _context.Projects
-                                             select p;
+                                         select p;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                projectsIQ = projectsIQ.Where(p => p.Title.ToUpper().Contains(searchString.ToUpper()));
+            }
+
 
             switch (sortOrder)
             {
@@ -75,7 +77,7 @@ namespace HendrixAdvancement.Pages_Projects
                     break;
             }
 
-            Project = await _context.Projects.ToListAsync();
+            Project = await projectsIQ.AsNoTracking().ToListAsync();
 
         }
     }
