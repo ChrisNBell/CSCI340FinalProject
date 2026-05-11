@@ -81,7 +81,10 @@ dt, dd{
 
 .col-5{
   align-items: center;
-  padding-left: 4%;
+  padding-left: 5%;
+}
+.col-6{
+  padding-bottom: 2%
 }
 
 h4{
@@ -93,5 +96,8 @@ h4{
 }
 .col{
   align-items: Center;
+}
+ul{
+  padding-left: 22%;
 }
 
