@@ -1,9 +1,24 @@
-th, td {
-  text-align: left;
+
+th, td{
   padding: 8px;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  color: rgb(68.85, 68.85, 68.85);
+}
+
+#headings{
+  padding: 8px;
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  color: #CB4F0C;
+
+}
+
+.back-link{
+  font-family: "Merriweather", "Times New Roman", Times, serif;
+  color: rgb(69, 69, 69);
 }
 
 h1{
+    text-align: center;
     padding-top: 1.2%;
     font-family: "Merriweather", "Times New Roman", Times, serif;
     font-weight: 800;
@@ -12,7 +27,15 @@ h1{
     color: #111
 }
 
+th a.project-heading {
+    color: #CB4F0C;
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 h2{
+  text-align: center;
   padding-top: 0.5%;
   font-family: "Merriweather", "Times New Roman", Times, serif;
   font-weight: 800;
@@ -20,19 +43,10 @@ h2{
   margin-bottom: 0.229em;
   color: #CB4F0C;
   opacity: 80%;
-  text-align: center;
+  
 }
 
-
-h4{
-    font-family: "Merriweather", "Times New Roman", Times, serif;
-    font-weight: 800;
-    margin-top: 0;
-    margin-bottom: 0.229em;
-}
-
-
-p{
+p {
   font-family: "Merriweather Sans", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.46;
@@ -44,3 +58,40 @@ tr:nth-child(even){background-color: #f2f2f2}
 img{
   display: flex;
 }
+
+.btn-primary{
+  background-color: #CB4F0C !important;
+  border-color: #CB4F0C !important;
+}
+
+.row{
+  text-align: left;
+  display: flex;
+  padding-top:2%;
+  padding-bottom:1%;
+}
+
+dt, dd{
+  padding-bottom: 2%
+}
+
+.form-group{
+  padding-bottom: 5%;
+}
+
+.col-5{
+  align-items: center;
+  padding-left: 4%;
+}
+
+h4{
+  text-align: center;
+    font-family: "Merriweather", "Times New Roman", Times, serif;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 0.229em;
+}
+.col{
+  align-items: Center;
+}
+

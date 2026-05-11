@@ -11,17 +11,30 @@
         <h1>Hendrix Advancement: Project Proposal Page</h1>
         <hr class="hr" />
     </h1>
-    <section class="container">
-        <div class="row">
-            <h2>Have a Project That You Want To Propose?</h2>
-            <p>We welcome any Faculty and Staff who have an idea or a current project that could have potential funding
-                needs to submit the project
-                proposal form below. All we need is some information about the project, then, upon approval, your
-                project will be available on the
-                Advancement website and available to potential doners.
-            </p>
-        </div>
 
+
+
+    <section class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h2>Have a Project That You Want To Propose?</h2>
+                        <p>We welcome any Faculty and Staff who have an idea or a current project that could have potential funding
+                        needs to submit the project
+                        proposal form below. All we need is some information about the project, then, upon approval, your
+                        project will be available on the
+                        Advancement website and available to potential doners. A good referance project could be the Windgate Museum of Art.
+                        Windgate relies on donations in order to keep exhibitions and programs free of charge for everyone!
+                        If you have any questions or concerns, please contact the Advancement Office. More information
+                        can be found on the about page.
+                    </p>
+                </div>
+
+                <div class="col d-flex align-items-center">
+                    <img id="Quad" src="https://www.hendrix.edu/uploadedImages/Giving/WindgateMuseum.jpg" alt="windgate" class="img-fluid" width="500px">
+                </div>
+            </div>
+        </section>
+    <section class="container">
         <div class="row">
             <form method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -86,13 +99,13 @@
                             <div class="form-group">
                                 <input type="submit" value="Submit" class="btn btn-primary" />
                             </div>
-                        </form>
-
-                    </div>
-
-                    <div>
+                        <div>
                         <a asp-page="Index">Back to List</a>
                     </div>
-                </section>
+                </form>
+
+            </div>
+        </section>
+
 
 
