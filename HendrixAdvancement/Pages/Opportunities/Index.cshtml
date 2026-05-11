@@ -19,6 +19,19 @@
     <p>
         <a asp-page="Create">Create New</a>
     </p>
+    <form asp-page="./Index" method="get">
+                <div class="form-actions no-color">
+                    <p>
+                        Search Opportunities:
+                        <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+                        <input type="submit" value="Search" class="btn btn-primary" /> |
+                        <a asp-page="./Index" style="color: #CB4F0C">Reset</a>
+                    </p>
+                </div>
+            </form>
+
+
+
     <table class="table">
         <thead>
             <tr>

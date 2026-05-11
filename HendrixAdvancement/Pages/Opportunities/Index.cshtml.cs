@@ -19,12 +19,26 @@ namespace HendrixAdvancement.Pages.Opportunities
             _context = context;
         }
 
+        public string CurrentFilter { get; set; }
+
+
         public IList<Opportunity> Opportunity { get;set; } = default!;
 
-        public async Task OnGetAsync()
+
+        public async Task OnGetAsync(string searchString)
+
         {
-            Opportunity = await _context.Opportunities
-                .Include(o => o.Project).ToListAsync();
+            CurrentFilter = searchString;
+
+            IQueryable<Opportunity> opportunitiesIQ = from o in _context.Opportunities
+                                        select o;
+        if (!String.IsNullOrEmpty(searchString))
+        {
+            opportunitiesIQ = opportunitiesIQ.Where(o => o.Title.ToUpper().Contains(searchString.ToUpper()));
         }
+
+            Opportunity = await opportunitiesIQ.AsNoTracking().ToListAsync();
+        }
+
     }
 }
